@@ -1,46 +1,51 @@
 class Hotel
 
-  def initialize
+  def initialize(name)
     @rooms = {}
     @guests = {}
-    @days = [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
+    @days = []
+    @name = name
   end
 
-def add_room
-  @
-  
-end
-  
-def add_room
-  @rooms.[room.title][room.bed_type][room_rate] = room
-end
-
-  
-
-  def add_guest
-    @guests.[guest.name] = guest
+  def add_room(room)
+    @rooms[room.title] = room 
+  end
+    
+  def add_guest(guest)
+    @guests[guest.name] = guest
   end
 
+  # def guest_requirements()
+    # end
+
+
+  def book_a_room(guest, room)
+    guest = @guests[guest.name]
+    room  = @rooms.delete(room.title)
+    guest.book_room(room)
+  end
+
+
+
+
+  def list_guests()
+    list_of_guests = @guests.map do |key, guest|
+      guest.pretty_string
+    end
+    list_of_guests.join("\n")  
+  end
 
   def list_rooms
-    room_string = 
-    
+     room_strings = @rooms.map do |key, room|
+      room.pretty_string
+    end
+      room_strings.join("\n") 
   end
 
 
-  # def list_room_available?
-  #   list_of_rooms = @rooms.map do |key, title|
-  #     rooms.room
-  #   end
-    
-      
-  #   endbook_strings = @books.map do  |key, book|
-  #       book.pretty_string
-  #     end
-  #   end
-  #     book_strings.join("\n")  
 
-  # end
+
+
 
  
 
