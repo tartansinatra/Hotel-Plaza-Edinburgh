@@ -11,9 +11,7 @@ class Guest
 
 
 
-  def book_room(room)
-    @room  
-  end
+ 
 
 
   def pretty_string

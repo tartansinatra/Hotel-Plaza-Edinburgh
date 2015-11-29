@@ -15,18 +15,6 @@ class Hotel
     @guests[guest.name] = guest
   end
 
-  # def guest_requirements()
-    # end
-
-
-  def book_a_room(guest, room)
-    guest = @guests[guest.name]
-    room  = @rooms.delete(room.title)
-    guest.book_room(room)
-  end
-
-
-
 
   def list_guests()
     list_of_guests = @guests.map do |key, guest|
@@ -42,6 +30,11 @@ class Hotel
       room_strings.join("\n") 
   end
 
+  def book_a_room(guest_name, room_title)
+    guest = @guests[guest_name]
+    room  = @rooms[room_title]
+    room.book_room(guest)
+  end
 
 
 
