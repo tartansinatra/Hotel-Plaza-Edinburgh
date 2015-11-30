@@ -12,8 +12,6 @@ class Guest
 
 
  
-
-
   def pretty_string
     "Guest Name: #{@name}"
   end
