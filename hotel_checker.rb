@@ -15,22 +15,25 @@ hotel.add_guest(Guest.new(name: "McGregor", no_of_people: 2, no_of_nights: 1))
 hotel.add_guest(Guest.new(name: "Hepplethwaite", no_of_people: 2, no_of_nights: 2))
 
 
-
-
-
 # List all the rooms
 puts "All the rooms are: \n#{hotel.list_rooms}"
 
 # List of guests
-puts "Guests in the system are: \n#{hotel.list_guests}"
+puts "Guests in the system are: \n#{hotel.list_guests}\n\n"
 
-# Book a room for a guest #
+# CHECK IN A GUEST#
 guest_name = "Smith"
 room_title = "Hunter"
 
-hotel.book_a_room(guest_name, room_title)
-puts "#{guest_name} has booked the #{room_title} room.\n\n" 
-binding.pry;''
+hotel.check_in_room(guest_name, room_title)
+puts "#{guest_name} has CHECKED IN to the #{room_title} room.\n\n" 
+
+
+puts "All the rooms are: \n #{hotel.list_occupied_rooms}"
+
+# # CHECK OUT A GUEST
+# hotel.check_out_room(guest_name, room_title)
+# puts "#{guest_name} has now checked into #{room_title} room.\n\n"
 
 
 

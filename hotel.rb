@@ -3,7 +3,6 @@ class Hotel
   def initialize(name)
     @rooms = {}
     @guests = {}
-    @days = []
     @name = name
   end
 
@@ -30,11 +29,27 @@ class Hotel
       room_strings.join("\n") 
   end
 
-  def book_a_room(guest_name, room_title)
+  def check_in_room(guest_name, room_title)
     guest = @guests[guest_name]
     room  = @rooms[room_title]
-    room.book_room(guest)
+    room.complete_check_in(guest)
   end
+
+  def list_occupied_rooms
+    room.list_occupied_rooms
+  end
+
+
+     
+    def check_out_room(guest_name, room_title)
+      guest = @rooms[guest_name]
+      room = @rooms[room_title]
+      room.complete_check_out(guest)
+    end
+ 
+
+
+
 
 
 
